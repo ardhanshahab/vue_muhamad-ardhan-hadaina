@@ -1,0 +1,13 @@
+# Introduction UI dan UX
+
+Terdapat 4 pilar dalam **User Interface**
+1. consistency
+2. keep the interface simple
+3. good typography
+4. offer informative feedback
+
+prototype ialah suatu *simulasi dari produk final*
+terdapat 3 pilar dalam prototype
+1. representation
+2. presicion
+3. interactivity
