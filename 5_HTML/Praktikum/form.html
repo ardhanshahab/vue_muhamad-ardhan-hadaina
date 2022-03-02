@@ -7,11 +7,31 @@
     <title>form</title>
 </head>
 <body>
-    <label><strong>Email</strong></label>
-    <input type="text" name="email" class="form-control" placeholder="Email">
-    <label><strong>Password</strong></label>
-    <input type="text" name="Password" class="form-control" placeholder="Password">
-    <button>Sign Up</button>
-
+    <h1>Buat Account Baru</h1>
+    <div>
+        <form>            
+    <label><strong>First Name</strong></label><br>
+    <input type="text" name="fname" class="form-control" placeholder="firstname">
+    <br><br>
+    <label><strong>Last Name</strong></label><br>
+    <input type="text" name="lname" class="form-control" placeholder="lastname"><br><br>
+    <label><strong>Gender</strong></label><br>
+    <input type="radio" name="male" class="form-control" placeholder="male"><label> Male</label><br>
+    <input type="radio" name="female" class="form-control" placeholder="female"><label> Female</label><br><br>
+    <label><strong>Nasionality</strong></label><br>
+    <select name="nasionality" id="level">
+    <option value="indonesia"> Indonesia </option>
+    <option value="malaysia"> Malaysia </option>
+    <option value="singapura"> Singapura </option>
+    </select><br><br>
+    <label><strong>Language Spoken</strong></label><br>
+    <input type="checkbox" name="indonesia" class="form-control" placeholder="indonesia"><label> Indonesia</label></label><br>
+    <input type="checkbox" name="english" class="form-control" placeholder="english"><label> English</label><br>
+    <input type="checkbox" name="other" class="form-control" placeholder="other"><label> Other</label><br><br>
+    <label><strong>Bio</strong></label><br>
+   <input type="text" width="100%" height="100px"><br><br> 
+   <input type="submit" formaction="welcome.html" value="Sign Up"><br>
+</form>
+</div>
 </body>
 </html>
