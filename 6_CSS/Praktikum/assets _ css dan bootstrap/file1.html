@@ -1,8 +1,12 @@
+<!DOCTYPE html>
 <html>
-
-
 <head>
-  <style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<style>
     @font-face {
   font-family: 'Slabo 27px';
   font-style: normal;
@@ -10,37 +14,68 @@
   src: url(https://fonts.gstatic.com/s/slabo27px/v11/mFT0WbgBwKPR_Z4hGN2qgxED1XJ7.woff2) format('woff2');
   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
     }
-  h4 {
+
+  p {
+    font-weight: 100;
+    text-align: center;
     font-family: 'Slabo 27px',serif;
-  font-style: normal;
-  font-weight: 400;
   color: white;
   font-size: 27px;
   }
-  div {
-    padding: 5px 10px 5px
-
+  div{
+    position: relative;
   }
   div.bingkai1 {   
-    margin-top: 50px;
+  height: 250px;
+  width: 200px;
+  padding: 10px 15px 10px;
+    margin-top: 25px;
     margin-bottom: 50px;
-    margin-right: 150px;
-    margin-left: 60px;
+    margin-right: 75px;
+    margin-left: 10px;
     border: 1px;
     background-color: red;
 
   }
+  div.bingkai2 { 
+    top: opx;
+    position: relative;  
+    height: 250px;
+  width: 200px;
+  padding: 10px 15px 10px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    margin-right: 75px;
+    margin-left: 350px;
+    border: 1px;
+    background-color: blue;
+
+  }
+  div.bingkai3 {  
+    border-radius: 25px;
+    height: 500px;
+  width: 400px;
+  padding: 10px 15px 10px;
+    margin-top: 25px;
+    margin-bottom: 50px;
+    margin-right: 75px;
+    margin-left: 100px;
+    border: 1px;background-color: green;
+
+  }
   </style>
-  <link rel="style" href="https://fonts.googleapis.com/css?family=Slabo+27px"> 
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Slabo+27px"> 
   
   
 </head>
 
 <body>
-  <div class="bingkai1"><h4>Saya adalah box red berukuran 100 px</div>
-  <div><p>Saya adalah box blue berukuran 100 px</p></div>
-  <div><p>Saya adalah box green berukuran 300 px </p></div>
-
+  <div>
+  <div class="bingkai1"><p>Saya adalah box red berukuran 100 px</div>
+  <div class="bingkai2"><p>Saya adalah box blue berukuran 100 px</p></div>
+</div>
+  <div class="bingkai3"><p>Saya adalah box green berukuran 300 px </p></div>
+<div>test</div>
 </body>
 
 </html>
