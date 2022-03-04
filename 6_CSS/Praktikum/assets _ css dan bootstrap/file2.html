@@ -6,57 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <style>
-* {
-  box-sizing: border-box;
-}
-
-div {
-    display: block;
-}
-
-.body img{
-        height: auto;
-        width:100%
-}
-.centertop{
-  position: absolute;
-  top: 10%;
-  width: 100%;
-  text-align: center;
-  font-size: 18px;
-}
-.center{
-    margin-left: 335px;
-    background-color: white;
-    border-radius: 5%;
-  position: absolute;
-  top: 25%;
-  width: 50%;
-  text-align: center;
-  font-size: 18px;
-}
-
-        p.footer{
-        color: white;
-        text-align: center;
-        }
-        }
-        .body{
-            margin: 0;
-            position: absolute;
-
-        }
-        .navbartop img{
+  .navbartop img{
             float: right;
             height:20%;
-            width:20%;
+            width:20%;     height: 15%;
+          width: 15%;
+          padding: 1px;
         }
-
         .navbartop{
         background-color: white;
-        padding: 15px;
-        }
+  padding-top: 15px;
+  padding-bottom: 15px;
 
+        }
+        
         .navbartop a {
     float: left;
     display: block;
@@ -64,48 +27,85 @@ div {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
+.container{
+width: 100%;
+    padding-right: var(--bs-gutter-x,.75rem);
+    padding-left: var(--bs-gutter-x,.75rem);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+div {
+    display: block;
+}
+
+.body{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;      
+  height: auto;
+        width:100%;
+        background-repeat: repeat;
+        margin-top: 48px;
+        margin-bottom: 0px;
+        padding-top: 48px;
+        padding-bottom: 48px;
+        background-image: url(sample-pattern.png);
+
+      }
+    .bgwhite{
+      background-color: white;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+.text-center{
+  text-align: center;
+        text-size-adjust: 100%;
+  
+}
+        p.footer{
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+        color: white;
+        text-align: center;
         }
         .footer{
+          margin-top: 0%;
+          display: block;
             padding: 15px;
             background-color: black;
         }
     </style>
 </head>
 <body>
+  <div class="container">
     <div class="navbartop">
-        <img src="sample-logo.png">
-        <a href="#">Link</a>
-  <a href="#">Link</a>
-  <a href="#">Link</a>
+        <img src="sample-logo.png">  
+        <a href="#">News</a>
+        <a href="#">About</a>
+        <a href="#">Content</a>
     </div>
-    <div class="body">
-        <img src="sample-pattern.png">
-       
-        <div class="row">
-            <div class="centertop">
-              <h2>Featured Post</h2>
-
-            </div>
-            
-            <div class="center">
-              <h2>Main Content</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
-              <h2>Main Content</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
-              <h2>Main Content</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
-              
-            </div>
-            
-            
-          
+  </div>
+  <div class="body text-center">
+    <h1>Featured Post</h1>
+    <div class="bgwhite">
+    <h2>Main Content</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+    <h2>Main Content</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+    <h2>Main Content</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+    b vvvvvvv vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
     </div>
-    <div class="footer">
+  </div>
+  <div class="footer">
         <p class="footer">Copyright 2021 Sliw</p>
     </div>
+  </div>
 </body>
 </html>
