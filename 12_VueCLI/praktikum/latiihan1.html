@@ -1,0 +1,52 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div id="app">{{todo}}
+        <table v-if="todos.length > 0">
+            <thead>
+            </thead>
+            <tbody v-for="(todo, index) in todos">
+                <td scope="row">{{index + 1}}</td>
+                <td>{{todo}}</td>
+            </tbody>
+        </table>
+        
+        <h1 v-else>Todo Belum Terisi</h1>
+
+        
+            <div class="form-group">
+        <input type="text" v-model="baru" @keyup.enter="tambah" id="baru" >
+        <button @click="tambah()">Tambahkan</button>
+    <h1 v-if="todos.length >= 4">Hebat!</h1>
+
+    </div>
+</div>
+<script src="https://unpkg.com/vue@3"></script>
+        <script>
+          Vue.createApp({
+            data() {
+              return {
+                  baru : '',
+                  todos: [],
+                  todo: ""
+              }
+            },
+              methods: {
+                  tambah() {
+                      if(this.baru == ''){
+                        alert("kosong");
+                      }
+                      else{
+                          this.todos.push(this.baru);
+                          this.baru = "";
+                    
+                      }
+                  },
+            }
+          }).mount('#app')
+        </script>
+    </body>
+</html>
+
