@@ -1,9 +1,10 @@
 <template>
 <div>
     <input type="text" class="baru" v-model="baru" @keyup.enter="weTambah" id="baru" >
-        <button @click="weTambah()">tambahkan</button>
+        <button v-if="!isEdit" @click="weTambah()">tambahkan</button>
+        <button v-else @click="saveEdit()">Save</button>
     <div class="tabel">
-         <table v-if="todos.length > 0" class="tabelbodi">
+         <!-- <table v-if="todos.length > 0" class="tabelbodi">
             <thead>
                 <td><h3>List yang harus dikerjakan</h3></td>
             </thead>
@@ -13,7 +14,14 @@
                 <td><button @click="removeTask(index)">Hapus</button></td>
                  <td><button @click="updateTask(index)" id="update">Edit</button></td>
             </tbody>
-        </table>
+        </table> -->
+        <ol>
+          <li v-for="(todo, index) in todos" :key="index">
+            {{todo}}
+          <button @click="removeTask(index)">Hapus</button>
+          <button @click="updateTask(index)" id="update">Edit</button> 
+          </li>
+        </ol>
         </div>
         </div>
 </template>
@@ -22,23 +30,14 @@
 
 export default {
   name: 'theHasil',
-  props: [''],
+
 
    data() {
     return {
-      todos: [
-        {
-        id: 1,
-        title: "Makan"
-      },
-      {
-        id: 2,
-        title: "Makann"
-      },{
-        id: 3,
-        title: "Makannn"
-      },
-        ]
+      todos: [],
+        currentIndex: 0,
+        isEdit: false,
+        baru: ""
     }
   },
   methods: {
@@ -46,10 +45,7 @@ export default {
       if (this.baru == ''){
             alert("kosong")
       }else{
-          this.todos.push({
-              title:this.baru
-        }
-    )
+          this.todos.push(this.baru)
         this.baru = ""
       }
     },
@@ -57,15 +53,24 @@ export default {
       this.todos.splice(index, 1)
   },
   updateTask(index) {
-      this.todos.splice(index, 1)
-        this.todos.push({
-              title:this.baru
-        })
+    const currentValue = this.todos[index];
+    console.log(currentValue)
+    this.baru = currentValue;
+    this.isEdit = true;
+    this.currentIndex = index;
+      
     },
+    saveEdit() {
+    this.todos.splice(this.currentIndex, 1, this.baru)
+    this.baru = "";
+    this.isEdit = false;
+    this.currentIndex = 0;
+            },
+    }
   
 
 }
-}
+
 
 
 </script>
