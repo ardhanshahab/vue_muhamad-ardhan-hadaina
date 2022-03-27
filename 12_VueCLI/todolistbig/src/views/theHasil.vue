@@ -1,22 +1,14 @@
 <template>
 <div>
+  <h1>TODOLIST</h1>
     <input type="text" class="baru" v-model="baru" @keyup.enter="weTambah" id="baru" >
         <button v-if="!isEdit" @click="weTambah()">tambahkan</button>
         <button v-else @click="saveEdit()">Save</button>
     <div class="tabel">
-         <!-- <table v-if="todos.length > 0" class="tabelbodi">
-            <thead>
-                <td><h3>List yang harus dikerjakan</h3></td>
-            </thead>
-            <tbody v-for="(todo, index) in todos" :key="todo.id">
-                <td scope="row" class="tabelnomor">{{index + 1}}</td>
-                <td>{{todo.title}}</td>
-                <td><button @click="removeTask(index)">Hapus</button></td>
-                 <td><button @click="updateTask(index)" id="update">Edit</button></td>
-            </tbody>
-        </table> -->
         <ol>
-          <li v-for="(todo, index) in todos" :key="index">
+          <li v-for="(todo, index) in todos" 
+          :key="index"
+          @click="redirect(todo)" >
             {{todo}}
           <button @click="removeTask(index)">Hapus</button>
           <button @click="updateTask(index)" id="update">Edit</button> 
@@ -40,7 +32,14 @@ export default {
         baru: ""
     }
   },
+  
   methods: {
+
+    redirect(todo){
+      return this.$router.push({ name: 'taskDetail', params: {item: todo},
+    })
+    },
+
     weTambah() {
       if (this.baru == ''){
             alert("kosong")
