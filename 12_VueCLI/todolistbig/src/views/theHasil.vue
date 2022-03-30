@@ -15,11 +15,21 @@
           </li>
         </ol>
         </div>
+        <hr/>
+        <input type="text" v-model="inputBrand" placeholder="Brand" />
+    <br />
+    <input type="text" v-model="inputPrice" placeholder="Price" />
+    <br /><br />
+    <button @click="pushLaptop">Push User</button>
+        <li v-for="(laptop, index) in laptopList" :key="index">
+        Brand: {{ laptop.brand }}
+        <br />
+        Price: Rp. {{ laptop.price }}
+      </li>
         </div>
 </template>
 
 <script>
-
 export default {
   name: 'theHasil',
 
@@ -29,24 +39,45 @@ export default {
       todos: [],
         currentIndex: 0,
         isEdit: false,
-        baru: ""
+        baru: "", 
+        inputBrand: "",
+        inputPrice: "",
     }
   },
   
+  computed: {
+    computetodo() {
+      return this.$store.state.todo.list;
+    },
+    // laptopList() {
+    //   return this.$store.state.product.list;
+    // },
+  },
+  
   methods: {
-
+// pushLaptop() {
+//       this.$store.dispatch("product/setList", {
+//         brand: this.inputBrand,
+//         price: this.inputPrice,
+//       });
+// },
     redirect(todo){
       return this.$router.push({ name: 'taskDetail', params: {item: todo},
     })
     },
-
+    //  weTambah() {
+    //   this.$store.dispatch("todolist/setList", {
+    //     list: this.baru,
+    //   });
+    // },
     weTambah() {
       if (this.baru == ''){
             alert("kosong")
       }else{
-          this.todos.push(this.baru)
-        this.baru = ""
-      }
+        this.$store.dispatch("todolist/setList", {
+        todo: this.baru,
+         });
+    }
     },
      removeTask(index) {
       this.todos.splice(index, 1)
