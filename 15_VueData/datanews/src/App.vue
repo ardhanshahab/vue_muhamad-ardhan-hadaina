@@ -1,28 +1,40 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="home">
+    <h1>Data News:</h1>
+    <ul id="example-1">
+      <li v-for="pokemon, index in listPokemon" :key="index">
+        {{ pokemon }}
+      </li>
+    </ul>
+    <p>{{ infoPokemon }}</p>
   </div>
 </template>
-
+// sayan mengikuti modul pokemon agari tidak bingung alurnya
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "app",
+  computed: {
+    listPokemon() {
+      return this.$store.state.pokemon.list;
+    },
+    infoPokemon() {
+      return this.$store.state.pokemon.info;
+    },
+  },
+  methods: {
+    fetchPokemon() {
+      this.$store.dispatch("pokemon/fetchList");
+    },
+    
+  },
+  mounted() {
+    this.fetchPokemon();
+  },
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style scoped>
+ul {
+  text-align: left;
 }
 </style>
