@@ -16,11 +16,17 @@ const mutations = {
 
 const actions = {
   fetchList(store) {
-    axios
-      .get(`https://newsapi.org/v2/top-headlines?country=us&apiKey=62a1d2d337ab4769a04e04a0990b93ee`)
+    axios.get('https://newsapi.org/v2/top-headlines', {
+        params:{
+            apiKey: "62a1d2d337ab4769a04e04a0990b93ee",
+            country: "us",
+        }
+    })
+      
       .then((response) => {
-        store.commit("setList", response.data.results);
+        store.commit("setList", response.data.articles);
         store.commit("setInfo", "");
+        console.log("reponse", response)
       })
       .catch((error) => {
         store.commit("setInfo", error);

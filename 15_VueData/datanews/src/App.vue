@@ -1,40 +1,25 @@
 <template>
   <div class="home">
-    <h1>Data News:</h1>
-    <ul id="example-1">
-      <li v-for="pokemon, index in listPokemon" :key="index">
-        {{ pokemon }}
-      </li>
-    </ul>
-    <p>{{ infoPokemon }}</p>
+    <router-view/>
   </div>
 </template>
-// sayan mengikuti modul pokemon agari tidak bingung alurnya
+// saya mengikuti modul pokemon agar tidak bingung alurnya
 <script>
 export default {
   name: "app",
-  computed: {
-    listPokemon() {
-      return this.$store.state.pokemon.list;
-    },
-    infoPokemon() {
-      return this.$store.state.pokemon.info;
-    },
-  },
-  methods: {
-    fetchPokemon() {
-      this.$store.dispatch("pokemon/fetchList");
-    },
-    
-  },
-  mounted() {
-    this.fetchPokemon();
-  },
+ 
 };
 </script>
 
-<style scoped>
-ul {
-  text-align: left;
+<style>
+
+div {
+  text-align: center;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+
 }
 </style>
