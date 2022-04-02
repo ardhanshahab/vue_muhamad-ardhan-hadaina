@@ -11,3 +11,4 @@ matriks ukur kinerja adalah tolak ukur penting yang menunjukan informasi seberap
 
 Lighthouse Audit adalah perkakas yang membantu menentukan skor pada matriks ukur keinerja aplikasi web
 
+* error di cmd vscode string test nya tidak muncul tapi js nya passed
