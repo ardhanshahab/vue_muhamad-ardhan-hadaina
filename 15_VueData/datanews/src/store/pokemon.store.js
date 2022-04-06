@@ -19,7 +19,7 @@ const actions = {
     axios.get('https://newsapi.org/v2/top-headlines', {
         params:{
             apiKey: "62a1d2d337ab4769a04e04a0990b93ee",
-            country: "us",
+            country: "id",
         }
     })
       
