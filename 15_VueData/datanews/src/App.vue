@@ -1,54 +1,37 @@
 <template>
 <v-app>
 
-    <v-app-bar
-    app
-    color="blue"
+    <v-app-bar 
+    app 
+    color="blue" 
+    dark 
     dense
     elevation="4"
-        dark
     >
-      <div class="d-flex align-center">
-        <v-img
+      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+      
+      <v-img 
           alt="newslogo"
           class="shrink mr-2"
           contain
           src="./assets/newslogo.png"
           transition="scale-transition"
           width="50"
-        />
-        
-        <h3 > NewsID </h3>
+      ></v-img>
 
-        
-      </div>
+      <v-toolbar-title>News ID</v-toolbar-title>
 
       <v-spacer></v-spacer>
-
-      <v-btn
-        href="/"
-        
-        text
-      >
-        <span class="mr-2">Home</span>
+<v-btn text href="/">
+Home
+</v-btn>
+      <v-btn icon>
+        <v-icon>mdi-magnify</v-icon>
       </v-btn>
-  
-
     </v-app-bar>
 
-
-
-  <!-- Sizes your content based upon application components -->
-  <v-main>
-<v-row>
-  <v-col cols="3">
-    <v-card
-    height="100%"
-    width="256"
-    class="mx-auto"
-  >
-    <v-navigation-drawer permanent absolute>
-      <v-list-item>
+    <v-navigation-drawer v-model="drawer" app color="white">
+        <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="text-h6">
             NewsAPP
@@ -61,15 +44,8 @@
 
       <v-divider></v-divider>
 
-      <v-list
-        dense
-        nav
-      >
-        <v-list-item
-          v-for="item in items"
-          :key="item.title"
-          link
-        >
+      <v-list dense>
+        <v-list-item v-for="(item, id) in items" :key="id" link>
           <v-list-item-icon>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-icon>
@@ -80,18 +56,20 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-  </v-card>
-  </v-col>
-  <v-col cols="1"></v-col>
-  <v-col cols="7"><router-view></router-view></v-col>
-  <v-col cols="1"></v-col>
+
+  <!-- Sizes your content based upon application components -->
+  <v-main>
+<v-row>
+ 
     <!-- Provides the application the proper gutter -->
     <!-- <v-container fluid> -->
-
+<v-container>
       <!-- If using vue-router -->
-
+<router-view></router-view>
+</v-container>
 </v-row>
     <!-- </v-container> -->
+
   </v-main>
 
   <v-footer
@@ -118,6 +96,7 @@ export default {
 
   data () {
     return{
+      drawer:true,
       items: [
           { title: 'Dashboard', icon: 'mdi-view-dashboard' },
           { title: 'Photos', icon: 'mdi-image' },
