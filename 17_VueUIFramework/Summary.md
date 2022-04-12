@@ -14,5 +14,3 @@ terdapat beberapa fungsionalitas yang dapat memberikan tampilan yang wah dari we
 2. responsibility
 3. skeleton loader
 4. dialog
-
-
