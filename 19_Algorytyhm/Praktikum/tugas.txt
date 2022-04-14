@@ -1,0 +1,42 @@
+https://whimsical.com/7m77BHDynAnojTLUSswFgo
+
+tgsbilanganPrima = (bilanganprima) ⇒ {
+
+let bagi = 0;
+
+for (let i = 1; i ≤ bilanganprima; i++){
+
+if (bilanganprima % i == 0){
+
+bagi++ }
+
+}
+
+if (bagi == 2){
+
+console.log(“bilangan prima”) 
+
+}else {
+
+console.log(“Bukan Bilangan Prima”) }
+
+}
+
+
+https://whimsical.com/VSW6vwzU7zGFAii23kvcvU
+
+lampubutton = (btnlamp) ⇒ {
+
+for (let i = 1; i ≤ btnlamp; i++){
+
+if (btnlamp % i == 0)
+{
+    lamp = true 
+} else {
+    lamp = false
+    }
+}
+
+ 
+
+
