@@ -1,0 +1,7 @@
+ 
+  mutation updateData {
+    update_keterangan_by_pk(pk_columns: {id: 6}, _set: {status: true}) {
+      id
+    }
+  }
+  

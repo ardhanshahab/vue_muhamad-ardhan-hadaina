@@ -1,0 +1,7 @@
+mutation insertData {
+    insert_keterangan(objects: {id: 6, id_anggota: 4, nilai: 55, pelajaran: "React", status: false}) {
+      returning {
+        id
+      }
+    }
+  }
