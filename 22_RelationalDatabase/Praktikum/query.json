@@ -1,0 +1,14 @@
+query MyQuery {
+    anggota {
+      id
+      nama
+      keterangans {
+        id
+        id_anggota
+        nilai
+        pelajaran
+        status
+      }
+    }
+  }
+  
