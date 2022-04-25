@@ -1,7 +1,11 @@
 <template>
 <div>
 
-
+      <div v-for="todos in todo" :key="todos.id">
+          <span> ID : {{todos.id}}</span>
+          <span> Todo : {{todos.todo}}</span>
+          <span> Complete : {{ todos.complete }}</span>
+      </div>
 
   <div>
     <h1>My Todo List</h1>
