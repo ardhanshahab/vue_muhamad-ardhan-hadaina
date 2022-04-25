@@ -1,0 +1,7 @@
+mutation MyMutation ($todo: String!, $complete: Boolean!){
+  insert_todo_one( object: {complete: $complete, todo: $todo}) {
+    id
+    complete
+    todo
+  }
+  }

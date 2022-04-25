@@ -1,20 +1,37 @@
 <template>
+<v-main>
   <div id="app">
-      <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/todo">Todo</router-link>
-    </div>
+      
       <h1>Halaman Home</h1>
-      <div v-for="todos in todo" :key="todos.id">
+      <ApolloQuery
+    :query="require('../gql/alltodo.gql')"
+  >
+    <template v-slot="{ result: { loading, error, data } }">
+      <!-- Loading -->
+      <div v-if="loading" class="loading apollo">Loading...</div>
+
+      <!-- Error -->
+      <div v-else-if="error" class="error apollo">An error occurred</div>
+
+      <!-- Result -->
+      <div v-else-if="data" class="result apollo">
+         <div v-for="todos in data.todo" :key="todos.id">
           <span> ID : {{todos.id}}</span>
           <span> Todo : {{todos.todo}}</span>
           <span> Complete : {{ todos.complete }}</span>
       </div>
+        </div>
+
+      <!-- No result -->
+      <div v-else class="no-result apollo">No result :(</div>
+    </template>
+  </ApolloQuery>
+
   </div>
+  </v-main>
 </template>
 <script>
 
-import gql from 'graphql-tag'
 
 export default {
   name: 'homeVue',
@@ -23,17 +40,8 @@ export default {
         
       }
   },
-apollo: {
-  // Simple query that will update the 'hello' vue property
-  todo: gql`
-  query MyQuery {
-  todo {
-    id
-    todo
-    complete
-  }
-}`,
-},
+
+
 }
 </script>
 
